@@ -1,0 +1,12 @@
+#page {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu {
+    width: 30%;
+}
+
+.Home {
+    width: 70%;
+}
