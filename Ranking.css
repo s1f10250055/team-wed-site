@@ -1,0 +1,17 @@
+#page {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu {
+    width: 30%;
+}
+
+.Home {
+    width: 70%;
+    margin-left: 50px;
+}
+
+h1{
+    text-align:center;
+}
