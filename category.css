@@ -1,0 +1,95 @@
+/* リセット（お好みで調整） */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* レイアウトの大枠 */
+.container {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+}
+
+/* サイドバー */
+.sidebar {
+  width: 240px;
+  background-color: #0c5c74;  /* サンプル色 */
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar .site-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-list li {
+  margin-bottom: 0.8rem;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+.nav-list a:hover {
+  opacity: 0.7;
+}
+
+/* メインコンテンツ */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #fafafa;
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* ジャンル一覧 */
+.genre-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+}
+
+.genre-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.genre-item p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .main-content {
+    padding: 20px;
+  }
+  .genre-list {
+    row-gap: 1.5rem;
+  }
+}
