@@ -284,8 +284,11 @@ a {
   color: gold;      /* 文字色を金色に */
   /* 必要であれば他のプロパティも追加可能 */
 }
-.genre-list .genre-item:nth-child(2) {
-  background-color: silver;  /* 背景色を銀色に */
-  /* 必要なら文字色や余白も調整 */
-  color: #333;
+/* .genre-list の中の .genre-item のうち2番目の記事の h3 を銀色に */
+.genre-list > .genre-item:nth-child(2) h3 {
+  color: silver;
+}
+/* ３番目のh3だけ銅色に */
+.genre-list .genre-item:nth-child(3) h3 {
+  color: #b87333;  /* 銅色 */
 }
