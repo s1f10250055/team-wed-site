@@ -92,7 +92,7 @@ a {
 }
 
 /* アクティブなリンクのスタイル */
-.nav-list a[href="category.html"] { /* 現在のページ（category.html）に適用 */
+.nav-list a[href="Home.html"] { /* 現在のページ（category.html）に適用 */
     background-color: #3498db; /* アクセントカラーの背景 */
     color: #fff; /* 白い文字 */
     font-weight: 700; /* 太字 */
