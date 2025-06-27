@@ -279,3 +279,13 @@ a {
         font-size: 0.95rem;
     }
 }
+/* .genre-list 内の .genre-item の１番目の h3 を金色に */
+.genre-list .genre-item:first-child h3 {
+  color: gold;      /* 文字色を金色に */
+  /* 必要であれば他のプロパティも追加可能 */
+}
+.genre-list .genre-item:nth-child(2) {
+  background-color: silver;  /* 背景色を銀色に */
+  /* 必要なら文字色や余白も調整 */
+  color: #333;
+}
