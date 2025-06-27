@@ -16,4 +16,34 @@ body {
   line-height: 1.6;
   color: #333;
 }
+.sidebar {
+    width: 280px; /* サイドバーの幅を少し広めに */
+    background-color: #2c3e50; /* 濃い目の青 */
+    color: #fff;
+    padding: 30px 25px; /* パディングを調整 */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* 右側に影 */
+    display: flex; /* flexboxで中身を配置 */
+    flex-direction: column; /* 縦並び */
+    align-items: center; /* 中央寄せ */
+    position: sticky; /* スクロールしても固定 */
+    top: 0;
+    height: 100vh; /* 画面いっぱいに高さ */
+}
+
+.sidebar .site-title {
+    font-family: 'M PLUS Rounded 1c', sans-serif; /* タイトル専用フォント */
+    font-size: 2.5rem; /* サイズを大きく */
+    margin-bottom: 2.5rem; /* 下の余白 */
+    font-weight: 700; /* 太字 */
+    text-align: center;
+}
+
+.sidebar .site-title a {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar .site-title a:hover {
+    color: #3498db; /* ホバー時にアクセントカラー */
+}
 
