@@ -98,4 +98,31 @@ a {
     font-weight: 700; /* 太字 */
     box-shadow: 0 2px 8px rgba(52, 152, 219, 0.4); /* 影で強調 */
 }
+.main-content {
+    flex: 1; /* 残りのスペースを全て占める */
+    padding: 60px 40px; /* 上下のパディングを大きく */
+    background-color: #ffffff; /* 白い背景 */
+}
+
+.page-title {
+    font-family: 'M PLUS Rounded 1c', sans-serif; /* タイトル専用フォント */
+    font-size: 3rem; /* サイズを大きく */
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2c3e50; /* 濃い目の青 */
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px; /* アンダーラインの幅 */
+    height: 5px; /* アンダーラインの太さ */
+    background-color: #3498db; /* アクセントカラー */
+    border-radius: 3px;
+}
 
