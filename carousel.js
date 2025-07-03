@@ -8,12 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalItems = carouselItems.length;
     let autoSlideInterval;
 
-    // 指定したインデックスのスライドへ移動
     function goToSlide(index) {
         if (index < 0) {
-            currentIndex = totalItems - 1; // 最後の画像へループ
+            currentIndex = totalItems - 1;
         } else if (index >= totalItems) {
-            currentIndex = 0; // 最初の画像へループ
+            currentIndex = 0;
         } else {
             currentIndex = index;
         }
@@ -21,16 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselInner.style.transform = `translateX(${offset}%)`;
     }
 
-    // 次のスライドへ
     function nextSlide() {
         goToSlide(currentIndex + 1);
     }
 
-    // 自動スライドを開始
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000); // 5秒ごとに切り替え（必要に応じて調整）
+        autoSlideInterval = setInterval(nextSlide, 5000); // 5秒ごとに切り替え
     }
 
-    // ページロード時に自動スライドを開始
     startAutoSlide();
 });
