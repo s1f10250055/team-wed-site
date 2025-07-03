@@ -1,128 +1,239 @@
-/* category.css */
+/* Home.css */
 
-/* Google Fontsのインポート */
-/* Noto Sans JP (本文向け) と M PLUS Rounded 1c (タイトル向け) を使用 */
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+/* category.cssで共通スタイルを読み込んでいることを前提とします */
 
-/* リセット */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* 基本設定 */
-body {
-    font-family: 'Noto Sans JP', sans-serif; /* 本文のフォント */
-    line-height: 1.7; /* 行の高さ */
-    color: #333; /* 基本の文字色 */
-    background-color: #f4f7f6; /* 全体の背景色 */
-}
-
-a {
-    text-decoration: none;
-    color: inherit; /* リンクの色を親要素から継承 */
-}
-
-/* レイアウトの大枠 */
-.container {
-    display: flex;
-    min-height: 100vh; /* 画面全体の高さを確保 */
-    background-color: #f4f7f6; /* コンテナの背景色 */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* 軽い影で立体感を出す */
-}
-
-/* サイドバー */
-.sidebar {
-    width: 280px; /* サイドバーの幅を少し広めに */
-    background-color: #2c3e50; /* 濃い目の青 */
-    color: #fff;
-    padding: 30px 25px; /* パディングを調整 */
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* 右側に影 */
-    display: flex; /* flexboxで中身を配置 */
-    flex-direction: column; /* 縦並び */
-    align-items: center; /* 中央寄せ */
-    position: sticky; /* スクロールしても固定 */
-    top: 0;
-    height: 100vh; /* 画面いっぱいに高さ */
-}
-
-.sidebar .site-title {
-    font-family: 'M PLUS Rounded 1c', sans-serif; /* タイトル専用フォント */
-    font-size: 2.5rem; /* サイズを大きく */
-    margin-bottom: 2.5rem; /* 下の余白 */
-    font-weight: 700; /* 太字 */
-    text-align: center;
-}
-
-.sidebar .site-title a {
-    color: #fff;
-    transition: color 0.3s ease-in-out;
-}
-
-.sidebar .site-title a:hover {
-    color: #3498db; /* ホバー時にアクセントカラー */
-}
-
-.nav-list {
-    list-style: none;
-    width: 100%; /* リストがサイドバー幅いっぱいに広がるように */
-}
-
-.nav-list li {
-    margin-bottom: 1.2rem; /* 各項目の間隔 */
-    text-align: center;
-}
-
-.nav-list a {
-    color: #e0e0e0; /* リンクの文字色を少し明るく */
-    text-decoration: none;
-    font-size: 1.2rem; /* フォントサイズを調整 */
-    padding: 10px 15px; /* クリックしやすいようにパディング */
-    display: block; /* ブロック要素にして全体をクリック可能に */
-    border-radius: 5px; /* 角を丸く */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    font-weight: 400; /* 太さ */
-}
-
-.nav-list a:hover {
-    background-color: rgba(52, 152, 219, 0.2); /* アクセントカラーの薄い背景 */
-    color: #3498db; /* アクセントカラー */
-    transform: translateX(5px); /* 右に少し移動 */
-}
-
-/* アクティブなリンクのスタイル */
-.nav-list a[href="Home.html"] { /* 現在のページ（category.html）に適用 */
+/* ヘッダー内のアクティブリンクの指定（Home.html用） */
+.sidebar .nav-list a[href="Home.html"] {
     background-color: #3498db; /* アクセントカラーの背景 */
     color: #fff; /* 白い文字 */
     font-weight: 700; /* 太字 */
     box-shadow: 0 2px 8px rgba(52, 152, 219, 0.4); /* 影で強調 */
 }
-.main-content {
-    flex: 1; /* 残りのスペースを全て占める */
-    padding: 60px 40px; /* 上下のパディングを大きく */
-    background-color: #ffffff; /* 白い背景 */
+
+/* Home.htmlで他ページのアクティブスタイルを解除 */
+.sidebar .nav-list a[href="category.html"],
+.sidebar .nav-list a[href="Era.html"],
+.sidebar .nav-list a[href="Ranking.html"] {
+    background-color: transparent;
+    color: #e0e0e0;
+    font-weight: 400;
+    box-shadow: none;
 }
 
-.page-title {
-    font-family: 'M PLUS Rounded 1c', sans-serif; /* タイトル専用フォント */
-    font-size: 3rem; /* サイズを大きく */
-    text-align: center;
-    margin-bottom: 15px;
-    color: #2c3e50; /* 濃い目の青 */
+
+/* 1. メインビジュアルカルーセル (画像が切り替わる大きな背景) */
+.main-visual-carousel {
     position: relative;
-    padding-bottom: 10px;
+    width: 100%;
+    max-width: 1200px;
+    height: 400px; /* ここを以前の550pxから400pxに小さくしました */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 60px;
+    background-color: #eee;
 }
 
-.page-title::after {
-    content: '';
+.carousel-inner {
+    display: flex;
+    width: 300%; /* 画像の枚数 * 100% (今回は3枚なので300%) */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* スライドのアニメーション */
+}
+
+.carousel-item {
+    min-width: calc(100% / 3); /* 3枚の画像のうち1枚が表示される幅 */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 80px; /* アンダーラインの幅 */
-    height: 5px; /* アンダーラインの太さ */
-    background-color: #3498db; /* アクセントカラー */
-    border-radius: 3px;
+    top: 0; left: 0;
+    z-index: 1;
+    filter: brightness(0.6);
 }
 
+.carousel-caption {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.carousel-caption h2 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 3rem; /* サイズを少し小さく */
+    margin-bottom: 15px; /* 余白も調整 */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    line-height: 1.2;
+}
+
+.carousel-caption p {
+    font-size: 1.1rem; /* サイズを少し小さく */
+    margin: 0 auto 30px; /* 余白も調整 */
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 2. クイックリンクセクション (年代別、ジャンル別、ランキング) */
+.quick-links {
+    padding: 60px 40px;
+    background-color: #fcfcfc;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 60px;
+}
+
+.link-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.link-card {
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    min-height: 200px;
+    position: relative;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 各リンクカードの背景画像 (例: 各ジャンルを象徴する画像) */
+.link-card.era-link { background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/600x400/5fa2e0/ffffff?text=Era') no-repeat center center/cover; }
+.link-card.category-link { background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/600x400/98d070/ffffff?text=Category') no-repeat center center/cover; }
+.link-card.ranking-link { background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/600x400/e07f5f/ffffff?text=Ranking') no-repeat center center/cover; }
+
+
+.link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.link-card-content {
+    color: #fff;
+    z-index: 2;
+    position: relative;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.link-card-content h3 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.link-card-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+
+/* レスポンシブデザインの調整 (Home.html固有の要素に対して) */
+@media (max-width: 992px) {
+    .main-visual-carousel {
+        height: 350px;
+        margin-bottom: 40px;
+    }
+    .carousel-caption h2 {
+        font-size: 2.5rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .quick-links { /* latest-updates は削除したので対象外 */
+        padding: 50px 30px;
+        margin-bottom: 40px;
+    }
+
+    .link-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .link-card-content h3 {
+        font-size: 1.8rem;
+    }
+    .link-card-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-visual-carousel {
+        height: 280px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+    }
+    .carousel-caption h2 {
+        font-size: 1.8rem;
+    }
+    .carousel-caption p {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+
+    .quick-links { /* latest-updates は削除したので対象外 */
+        padding: 40px 20px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .link-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .link-card {
+        min-height: 180px;
+    }
+    .link-card-content h3 {
+        font-size: 1.6rem;
+    }
+    .link-card-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-visual-carousel {
+        height: 200px;
+    }
+    .carousel-caption h2 {
+        font-size: 1.4rem;
+    }
+    .carousel-caption p {
+        font-size: 0.75rem;
+        margin-bottom: 15px;
+    }
+    .btn-primary, .btn-secondary {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .quick-links { /* latest-updates は削除したので対象外 */
+        padding: 30px 15px;
+    }
+}
