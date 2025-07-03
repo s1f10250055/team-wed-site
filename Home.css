@@ -96,7 +96,7 @@
 /* 2. クイックリンクセクション (年代別、ジャンル別、ランキング) */
 .quick-links {
     padding: 60px 40px;
-    background-color: #fcfcfc;
+    background-color: #b3f3cb;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 60px;
@@ -127,7 +127,7 @@
 
 /* 各リンクカードの背景画像 (例: 各ジャンルを象徴する画像) */
 .link-card.era-link { background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/600x400/5fa2e0/ffffff?text=Era') no-repeat center center/cover; }
-.link-card.category-link { background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/600x400/98d070/ffffff?text=Category') no-repeat center center/cover; }
+.link-card.category-link { background: linear-gradient(rgba(245, 90, 90, 0.562), rgba(203, 224, 6, 0.4)), url('https://via.placeholder.com/600x400/98d070/ffffff?text=Category') no-repeat center center/cover; }
 .link-card.ranking-link { background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/600x400/e07f5f/ffffff?text=Ranking') no-repeat center center/cover; }
 
 

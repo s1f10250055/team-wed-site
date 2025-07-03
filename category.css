@@ -148,7 +148,7 @@ a {
 .main-content {
     flex: 1;
     padding: 60px 40px;
-    background-color: #FDFBF8; /* ★ここを淡いベージュに変更しました★ */
+    background-color: #d5f2f7; /* ★ここを淡いベージュに変更しました★ */
     background-image: url('images/dot-pattern-light.png'); /* 柄は維持 */
     background-repeat: repeat;
 }
@@ -157,17 +157,22 @@ a {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 15px;
-    color: #D96B4E; /* タイトル色: メインカラー（暖色系） */
+    margin-bottom: 30px; /* 下の余白を少し増やします */
+    color: #f5886a; /* タイトル色: メインカラー（暖色系） */
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 15px; /* 下ボーダー分のpadding */
+    padding-top: 15px;    /* 上下のpaddingを追加 */
+    background-color: rgba(244, 247, 68, 0.3); /* 薄い背景色（全体の背景色に近い色を少し透過） */
+    border-top: 1px solid #d49413; /* 薄い上ボーダー */
+    border-bottom: 1px solid #d49413; /* 薄い下ボーダー */
+    border-radius: 5px; /* 少し角を丸く */
 }
 
 .page-title::after {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 5px; /* 下ボーダーとの距離を調整 */
     transform: translateX(-50%);
     background-color: #FF8C6B; /* アクセントカラー（暖色系） */
     width: 80px;
