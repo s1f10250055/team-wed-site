@@ -292,12 +292,21 @@ a {
 .genre-list .genre-item:nth-child(3) h3 {
   color: #b87333;  /* 銅色 */
 }
-.genre-item--naruto {
-  /* 画像のパスは CSS ファイルから見た相対パスで書きます */
-  background-image: url("c:\Users\iniad\Pictures\team演習.png");
-  background-size: cover;       /* 要素いっぱいに拡大縮小 */
-  background-position: center;  /* 中心を基準に配置 */
-  /* 必要なら高さを指定 */
-  padding: 20px;                /* 中身との余白 */
-  color: #fff;                  /* 文字色を白にして見やすく */
+.genre-item {
+  /* 必要に応じて記事全体に背景を敷くなら .genre-item に設定 */
+  /* background: url('images/image.png') no-repeat center/cover; */
+}
+/* .genre-image-gallery の余白や横幅だけ指定 */
+.genre-image-gallery {
+  width: 320px;        /* 横幅だけ固定 */
+  margin-bottom: 1rem;
+}
+
+.genre-image-gallery img {
+  display: block;
+  width: 100%;         /* 横幅いっぱいに */
+  height: auto;        /* 縦横比を維持 */
+  max-height: 140px;   /* ←お好みの高さ制限 */
+  /* object-fit は不要か、あっても contain */
+  object-fit: contain;
 }
