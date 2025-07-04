@@ -104,7 +104,7 @@ a {
 .main-content {
     flex: 1; /* 残りのスペースを全て占める */
     padding: 60px 40px; /* 上下のパディングを大きく */
-    background-color: #ffffff; /* 白い背景 */
+    background-color: #85d0ff; /* 水色背景 */
 }
 
 .page-title {
@@ -125,7 +125,7 @@ a {
     transform: translateX(-50%);
     width: 80px; /* アンダーラインの幅 */
     height: 5px; /* アンダーラインの太さ */
-    background-color: #3498db; /* アクセントカラー */
+    background-color: #56c2bf; /* アクセントカラー */
     border-radius: 3px;
 }
 
@@ -165,7 +165,7 @@ a {
     left: 0;
     width: 8px;
     height: 100%;
-    background-color: #3498db; /* アクセントカラー */
+    background-color: #56c2bf; /* アクセントカラー */
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
